@@ -9,6 +9,8 @@ dependencies {
     compileOnly "com.ryanharter.auto.value:auto-value-gson:0.8.0"
     apt "com.ryanharter.auto.value:auto-value-gson:0.8.0"
 
+    apt "com.github.reggar:auto-value-ignore-hash-equals:1.1.4"
+
     implementation 'com.google.code.gson:gson:2.8.4'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 

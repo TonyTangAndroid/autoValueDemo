@@ -19,6 +19,7 @@ public abstract class SimpleBean {
 
     public abstract String objectId();
 
+    @IgnoreHashEquals
     public abstract String title();
 
     @Nullable
