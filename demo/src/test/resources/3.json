@@ -1,0 +1,27 @@
+{
+  "objectId": "3WQrZ0dyrt",
+  "title": "test title 1",
+  "options": [
+    "a",
+    "b",
+    "c"
+  ],
+  "ACL": {
+    "aclList": [
+      {
+        "userId": "ctn1Zeov9d",
+        "permission": {
+          "read": true,
+          "write": true
+        }
+      },
+      {
+        "userId": "zn1xx1ov8d",
+        "permission": {
+          "read": true,
+          "write": false
+        }
+      }
+    ]
+  }
+}
