@@ -36,6 +36,7 @@ public class SimpleBean4Test {
         gsonBuilder.registerTypeAdapterFactory(BoxTypeAdapterFactory.create());
         gsonBuilder.setPrettyPrinting();
         gsonBuilder.registerTypeAdapter(AclWrapper.class, new UserPermissionJsonDeserializer(baseGson()));
+        gsonBuilder.registerTypeAdapter(Permission.class, new PermissionJsonAdapter(baseGson()));
         return gsonBuilder.create();
     }
 
