@@ -1,7 +1,7 @@
 {
   "objectId": "3WQrZ0dyrt",
   "title": "test title 1",
-  "sillyJson": "{\n  \"read\": true,\n  \"write\": true\n}",
+  "sillyJson": "{\n  \"read\": true,\n  \"write\": false\n}",
   "options": [
     "a",
     "b",

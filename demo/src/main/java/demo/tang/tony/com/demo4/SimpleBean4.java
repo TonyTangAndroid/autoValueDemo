@@ -25,6 +25,8 @@ public abstract class SimpleBean4 {
 
     public abstract String title();
 
+    public abstract Permission sillyJson();
+
     @Nullable
     public abstract List<String> options();
 
@@ -40,6 +42,8 @@ public abstract class SimpleBean4 {
         public abstract Builder options(List<String> options);
 
         public abstract Builder title(String title);
+
+        public abstract Builder sillyJson(Permission sillyJson);
 
         public abstract Builder wrapper(AclWrapper wrapper);
 
