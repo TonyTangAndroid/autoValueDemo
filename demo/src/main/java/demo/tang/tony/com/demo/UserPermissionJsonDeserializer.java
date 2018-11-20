@@ -6,13 +6,15 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class UserPermissionJsonDeserializer implements JsonDeserializer<AclWrapper> {
+public class UserPermissionJsonDeserializer implements JsonDeserializer<AclWrapper>, JsonSerializer<AclWrapper> {
 
 
     private final Gson baseGson;
@@ -48,9 +50,23 @@ public class UserPermissionJsonDeserializer implements JsonDeserializer<AclWrapp
         return AclWrapper.builder().aclList(userPermissionList).build();
 
     }
-//
-//    @Override
-//    public JsonElement serialize(AclWrapper src, Type typeOfSrc, JsonSerializationContext context) {
-//        throw new RuntimeException();
-//    }
+
+    @Override
+    public JsonElement serialize(AclWrapper src, Type typeOfSrc, JsonSerializationContext context) {
+
+        final JsonObject jsonObject = new JsonObject();
+
+
+        for (UserPermission userPermission : src.aclList()) {
+
+            final JsonObject jsonObjectPermission = new JsonObject();
+            Permission permission = userPermission.permission();
+            jsonObjectPermission.addProperty("read", permission.read());
+            jsonObjectPermission.addProperty("write", permission.write());
+            jsonObject.add(userPermission.userId(), jsonObjectPermission);
+        }
+
+        return jsonObject;
+
+    }
 }
