@@ -28,7 +28,18 @@ public class SimpleBean3Test {
 
         Truth.assertThat(actual_hard()).isEqualTo(expected());
 
+        Truth.assertThat(gson_hard().toJson(expected())).isEqualTo(expectJsonString());
 
+    }
+
+    @Test
+    public void builder_hard_serialize() throws IOException {
+
+        Truth.assertThat(gson_hard().toJson(actual_hard())).isEqualTo(expectJsonString());
+    }
+
+    private String expectJsonString() {
+        return TestUtils.json("3_hard.json", this);
     }
 
 
@@ -62,6 +73,7 @@ public class SimpleBean3Test {
     private Gson gson_hard() {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapterFactory(BoxTypeAdapterFactory.create());
+        gsonBuilder.setPrettyPrinting();
         gsonBuilder.registerTypeAdapter(AclWrapper.class, new UserPermissionJsonDeserializer(baseGson()));
         return gsonBuilder.create();
 
