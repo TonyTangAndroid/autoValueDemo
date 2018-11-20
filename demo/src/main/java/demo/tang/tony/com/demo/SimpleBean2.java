@@ -6,8 +6,6 @@ import com.google.gson.TypeAdapter;
 
 import javax.annotation.Nullable;
 
-import demo.tang.tony.com.demo2.NestIdBean;
-
 @AutoValue
 public abstract class SimpleBean2 {
 

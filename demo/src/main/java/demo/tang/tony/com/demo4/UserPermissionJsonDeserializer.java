@@ -1,4 +1,4 @@
-package demo.tang.tony.com.demo;
+package demo.tang.tony.com.demo4;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonDeserializationContext;
@@ -25,7 +25,6 @@ public class UserPermissionJsonDeserializer implements JsonDeserializer<AclWrapp
 
     @Override
     public AclWrapper deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext ctx) throws JsonParseException {
-
         JsonObject obj = json.getAsJsonObject();
         Set<String> strings = obj.keySet();
         int size = strings.size();

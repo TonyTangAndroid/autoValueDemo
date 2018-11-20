@@ -8,8 +8,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import demo.tang.tony.com.demo2.NestIdBean;
-
 public class ReadFile2Test {
 
 

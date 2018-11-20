@@ -1,0 +1,20 @@
+{
+  "objectId": "3WQrZ0dyrt",
+  "title": "test title 1",
+  "sillyJson": "{\n  \"read\": true,\n  \"write\": true\n}",
+  "options": [
+    "a",
+    "b",
+    "c"
+  ],
+  "ACL": {
+    "ctn1Zeov9d": {
+      "read": true,
+      "write": true
+    },
+    "zn1xx1ov8d": {
+      "read": true,
+      "write": false
+    }
+  }
+}

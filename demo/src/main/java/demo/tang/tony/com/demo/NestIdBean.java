@@ -1,4 +1,4 @@
-package demo.tang.tony.com.demo2;
+package demo.tang.tony.com.demo;
 
 import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
@@ -7,9 +7,6 @@ import com.google.gson.TypeAdapter;
 @AutoValue
 public abstract class NestIdBean {
 
-//     "userId": "3WQrZ0dyrt",
-//             "userName": "Tony"
-    
 
     public abstract String userId();
 
