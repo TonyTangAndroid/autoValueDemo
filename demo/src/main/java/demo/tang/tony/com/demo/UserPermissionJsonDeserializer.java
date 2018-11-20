@@ -58,12 +58,8 @@ public class UserPermissionJsonDeserializer implements JsonDeserializer<AclWrapp
 
 
         for (UserPermission userPermission : src.aclList()) {
-
-            final JsonObject jsonObjectPermission = new JsonObject();
-            Permission permission = userPermission.permission();
-            jsonObjectPermission.addProperty("read", permission.read());
-            jsonObjectPermission.addProperty("write", permission.write());
-            jsonObject.add(userPermission.userId(), jsonObjectPermission);
+            JsonElement jsonElement = baseGson.toJsonTree(userPermission.permission());
+            jsonObject.add(userPermission.userId(), jsonElement);
         }
 
         return jsonObject;
