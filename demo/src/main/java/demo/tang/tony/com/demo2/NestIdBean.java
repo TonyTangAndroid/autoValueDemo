@@ -9,7 +9,7 @@ public abstract class NestIdBean {
 
 //     "userId": "3WQrZ0dyrt",
 //             "userName": "Tony"
-    
+
 
     public abstract String userId();
 
